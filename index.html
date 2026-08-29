@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/svg" href="./img/logo/nc-favicon.png">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/mid.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="./js/nav.js" defer></script>
+    <script src="./js/slider.js" defer></script>
+    <title>salarbet</title>
+</head>
+<body id="body">
+    
+    <div class="cookies-container">
+        <div class="cookies-inner">
+            <p>By using this website, you accept the placement and use of cookies. For more information please read our <a class="cookies-policy" href="#">Privacy Policy</a></p>
+            <a class="cookies-btn" href="#">ACCEPT</a>
+        </div>
+    </div>
+
+    <div class="nav-container">
+        <nav class="nav">
+            <div class="navlogo">
+                <a href="index.html"><img class="navlogo1" src="./img/logo/Logo.png" alt="site logo"></a>
+                <img class="navlogo2" src="./img/logo/arsenal.png" alt="arsenal">
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="livebetting.html">LIVE BETTING</a></li>
+                <li class="nav-item"><a href="sportsbetting.html">SPORTS BETTING</a></li>
+                <li class="nav-item"><a href="casino.html">CASINO</a></li>
+                <li class="nav-item"><a href="livecasino.html">LIVE CASINO</a></li>
+                <li class="nav-item"><a href="games.html">GAMES</a><span class="new">NEW</span></li>
+                <li class="nav-item"><a href="virtual.html">VIRTUAL</a><span class="new">NEW</span></li>
+                <li class="nav-item"><a href="esp.html">ESPORTS</a></li>
+                <li class="nav-item"><a href="multiplayer.html" style="color: #ffc107; font-weight: bold;">MULTIPLAYER 🎮</a><span class="new">HOT</span></li>
+            </ul>
+
+            <div class="signin-container">
+                {% if username %}
+                    <div class="user-profile" style="color: white; display: flex; align-items: center; gap: 8px;">
+                        <span>👤 {{ username }}</span>
+                        <span style="background: #10b981; padding: 5px 8px; border-radius: 5px; color: white;">€{{ balance }}</span>
+                        
+                        <a href="#" id="openWithdrawModal" style="background: #e11d48; padding: 6px 10px; border-radius: 5px; color: white; text-decoration: none; font-size: 12px; font-weight: bold;">سحب (Withdraw)</a>
+                        <a href="wallet.html" style="background: #3b82f6; padding: 6px 10px; border-radius: 5px; color: white; text-decoration: none; font-size: 12px; font-weight: bold;">Wallet</a>
+                        
+                        <a href="deposit.html" style="background: #8b5cf6; padding: 6px 10px; border-radius: 5px; color: white; text-decoration: none; font-size: 12px; font-weight: bold;">Crypto</a>
+                        <a href="/logout" style="color: #ef4444; text-decoration: none; font-size: 13px; font-weight: bold;">لۆگآوت</a>
+                    </div>
+                {% else %}
+                    <a class="regBtn" href="#" id="openRegModal" style="cursor: pointer;">REGISTER</a>
+                    <a class="signBtn" href="#" id="openSignModal" style="cursor: pointer;">SIGN IN</a>
+                {% endif %}
+            </div>
+
+            <div id="menu" class="menu">&#9776;</div>
+
+            <div class="langs">
+                <div class="lang-container">
+                    <div id="lang1" class="lang lang1">
+                        <span><img src="./img/icons/en.svg" alt="US Flag icon"></span>
+                        <span>EN</span>
+                    </div>
+                    <ul id="lang2" class="lang-drop">
+                        <li class="lang"><span><img src="./img/icons/de.svg" alt="Flag icon"></span><span>DE</span></li>
+                        <li class="lang"><span><img src="./img/icons/tr.svg" alt="Flag icon"></span><span>TR</span></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="navmob-container" class="navmob-container">
+        <div class="navmob-inner">
+            <div id="cross" class="cross">&#10006;</div>
+            <div class="navmob">
+                <div class="logo-container">
+                    <a href="index.html"><img src="./img/logo/Logo.png" alt="site logo"></a>
+                </div>
+                <ul class="navmob-list">
+                    <li class="navmob-item"><a href="sportsbetting.html">SPORT BETTING</a></li>
+                    <li class="navmob-item"><a href="livebetting.html">LIVE BETTING</a></li>
+                    <li class="navmob-item"><a href="casino.html">CASINO</a></li>
+                    <li class="navmob-item"><a href="livecasino.html">LIVE CASINO</a></li>
+                    <li class="navmob-item"><a href="games.html">GAMES<span>NEW</span></a></li>
+                    <li class="navmob-item"><a href="virtual.html">VIRTUAL<span>NEW</span></a></li>
+                    <li class="navmob-item"><a href="esp.html">ESPORTS</a></li>
+                    <li class="navmob-item"><a href="multiplayer.html" style="color: #ffc107;">MULTIPLAYER 🎮</a><span>HOT</span></li>
+                </ul>
+                <div class="gift-container">
+                    <a href="#"><img src="./img/icons/gift.png" alt="gift box"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="banner1-container">
+        <div class="banner1">
+            <div class="banner1-left">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider1.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider2.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider3.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider1.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider5.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Play now</a>
+                        <a href="#"><img src="./img/slider6.jpg"></a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="cta">Learn more</a>
+                        <a href="#"><img src="./img/slider7.jpg"></a>
+                    </div>
+                    
+                    <div class='controls' style="text-align:center">
+                        <a class="prev" onclick="plusSlides(-1)"></a>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <a class="next" id="nxt" onclick="plusSlides(1)"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner1-right">
+                <a href="#">
+                    <img src="./img/banner-img.png" alt="Arsenal player">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner2-container">
+        <div class="banner2">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img class="carousel-bg" src="./img/slider-img.png" alt="">
+                    <div class="item-1">
+                        <div class="carousel-top">
+                            <p>Bundesliga</p>
+                            <h4>Werder Bremen - Bayer Leverkusen</h4>
+                            <p>2020-05-18 22:30</p>
+                        </div>
+                        <div class="carousel-bottom">
+                            <div class="carousel-data"><p>W1</p><a href="#">1.33</a></div>
+                            <div class="carousel-data"><p>X</p><a href="#">2.33</a></div>
+                            <div class="carousel-data"><p>W2</p><a href="#">3.33</a></div>
+                        </div>
+                    </div>
+                    <div class="item-2">
+                        <div class="carousel-top">
+                            <p>Global StarCraft 2 League</p>
+                            <h4>Werder Bremen - Bayer Leverkusen</h4>
+                            <p>2020-05-18 22:30</p>
+                        </div>
+                        <div class="carousel-bottom">
+                            <div class="carousel-data"><p>W1</p><a href="#">1.33</a></div>
+                            <div class="carousel-data"><p>X</p><a href="#">2.33</a></div>
+                            <div class="carousel-data"><p>W2</p><a href="#">3.33</a></div>
+                        </div>
+                    </div>
+                    <div class="item-3">
+                        <div class="carousel-top">
+                            <p>Bundesliga</p>
+                            <h4>Werder Bremen - Bayer Leverkusen</h4>
+                            <p>2020-05-18 22:30</p>
+                        </div>
+                        <div class="carousel-bottom">
+                            <div class="carousel-data"><p>W1</p><a href="#">1.33</a></div>
+                            <div class="carousel-data"><p>X</p><a href="#">2.33</a></div>
+                            <div class="carousel-data"><p>W2</p><a href="#">3.33</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner2-right">
+                <a href="#"><img src="./img/banner2-img1.jpg" alt="Banner2 img1"></a>
+                <a href="#"><img src="./img/banner2-img2.jpg" alt="Banner2 img2"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="title-container">
+        <div class="title">
+            <h2>Casino</h2>
+            <a href="#">More</a>
+        </div>
+    </section>
+
+    <section class="games-container">
+        <div class="games-inner">
+            <div class="game-cta">
+                <img src="./img/games-img/game-img1.png" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Book of Dead</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img2.svg" style="transform: scale(1.3);" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Starburst™</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img3.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Extra Chilli</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img4.svg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Big Buffalo</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img5.svg" style="transform: scale(1.3);" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Gonzo's Quest™</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img6.jpeg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Wolf Gold™</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img7.jpeg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Vikings Go Berzerk</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img8.jpeg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Legacy of Dead</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game-img9.svg" style="transform: scale(1.3);" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Finn's Golden Tavern™</p><p>0 </p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="title-container">
+        <div class="title">
+            <h2>Live Casino</h2>
+            <a href="#">More</a>
+        </div>
+    </section>
+
+    <section class="games-container">
+        <div class="games-inner">
+            <div class="game-cta">
+                <img src="./img/games-img/game2-img1.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Live Bet on Poker</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img2.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Roulette</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img3.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Lightning Roulette</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img4.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>First Person Lightning Roulette</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img5.jpeg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Spin a Win</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img6.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Live BlackJack</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img7.gif" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Quantum Roulette</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item">
+                <img src="./img/games-img/game2-img8.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Super Six Baccarat</p><p>0 </p></div>
+                </div>
+            </div>
+            <div class="game-item" style="background-image: url(./img/games-img/game-img9.svg);">
+                <img src="./img/games-img/game2-img9.jpg" alt="">
+                <div class="game-overlay">
+                    <p class="game-like"></p>
+                    <a href="#" class="play-btn">Play for real</a>
+                    <div class="game-title"><p>Live Roulette</p><p>0 </p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promobanner-section">
+        <div class="promobanner-container">
+            <div class="promobanner1"><img src="./img/promo1-eng.svg" alt=""></div>
+            <div class="promobanner2"><img src="./img/promo2-eng.svg" alt=""></div>
+        </div>
+    </section>
+    
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-top-left"><img src="./img/logo/arsenal.png" alt="Arsenal FC"></div>
+                <div class="footer-top-right">
+                    <img class="client1" src="./img/footer/clients1.png" alt="Payment outlet">
+                    <img class="client2" src="./img/footer/clients2.png" alt="Payment outlet">
+                </div>
+            </div>
+
+            <div class="footer-mid">
+                <div class="footer-mid-left">
+                    <div class="footer-links">
+                        <h4>ABOUT</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Responsible Gaming</a></li>
+                            <li><a href="#">General Terms and Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Bonus Terms and Conditions</a></li>
+                            <li><a href="#">Affiliate Program</a></li>
+                            <li><a href="#">Our Betshops</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>HELP</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Sport Betting Rules</a></li>
+                            <li><a href="#">Counter Offer</a></li>
+                            <li><a href="#">Esports Betting Rules</a></li>
+                            <li><a href="#">Games Rules</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>STATISTICS</h4>
+                        <ul>
+                            <li><a href="#">Statistics</a></li>
+                            <li><a href="#">Live Calendar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>PRODUCTS</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Responsible Gaming</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-mid-right">
+                    <div class="mob-apps">
+                        <h4>MOBILE APPS</h4>
+                        <div class="app-icons">
+                            <a href="#"><img src="./img/footer/app1.png" alt=""></a>
+                            <a href="#"><img src="./img/footer/app2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="other-links">
+                        <a href="#" class="chat-btn">Chat now</a>
+                        <h2>18+</h2>
+                        <p class="copyright">© 2003 - 2020 Nextcalibur</p>
+                        <div class="socials">
+                            <h4>Follow Us</h4>
+                            <ul class="socials-list">
+                                <li><a href="#"><img src="./img/icons/social-1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/icons/social-2.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/icons/social-3.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="langs-mob">
+                <h4>LANGUAGES: </h4>
+                <div class="lang-mob-container">
+                    <div id="lang3" class="lang lang1" >
+                        <span><img src="./img/icons/en.svg" alt="US Flag icon"></span>
+                        <span>EN</span>
+                    </div>
+                    <ul id="lang4" class="lang-drop"  >
+                        <li class="lang"><span><img src="./img/icons/de.svg" alt="Flag icon"></span><span>DE</span></li>
+                        <li class="lang"><span><img src="./img/icons/tr.svg" alt="Flag icon"></span><span>TR</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <span><img class="holmark1" src="./img/footer/holmark.png" alt=""></span>
+                    <a href="#"><img class="holmark2" src="./img/footer/holmark2.png" alt=""></a>
+                    <a href="#"><img class="holmark3" src="./img/footer/holmark3.png" alt=""></a>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>Nextcalibur is operated by Nextcalibur Technology (Company Registration №C99999, Malta, 20.10.2009)...</p>
+                    <p>Under 18s are strictly forbidden from gambling on this website. Underage gambling is an offence</p>
+                    <p>© Nextcalibur.de 2020 | Gambling can be addictive, please play responsibly.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #1e1b4b; padding: 25px; border-radius: 10px; width: 320px; color: white; text-align: center;">
+            <h3 style="margin-bottom: 15px;">تۆمارکرنا ئەکاونتی (Register)</h3>
+            
+            <form action="/api/register" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" name="username" placeholder="ناڤێ بکارهێنەری (Username)" required style="padding: 10px; border-radius: 5px; border: none;">
+                <input type="email" name="email" placeholder="ئیمەیل (example@gmail.com)" required style="padding: 10px; border-radius: 5px; border: none;">
+                <input type="password" name="password" placeholder="پەیپاڤ (Password)" required style="padding: 10px; border-radius: 5px; border: none;">
+                <button type="submit" style="padding: 10px; background: #db2777; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">تۆمارکرن ب ئیمەیل</button>
+            </form>
+
+            <div style="margin: 15px 0; border-top: 1px solid #4338ca; padding-top: 12px; position: relative;">
+                <span style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background: #1e1b4b; padding: 0 8px; font-size: 12px; color: #a5b4fc;">یان</span>
+            </div>
+
+            <a href="/auth/google" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: white; color: #1f2937; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 13px;">
+                <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.14C3.15 21.36 7.22 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.62H1.18C.43 8.13 0 9.83 0 12s.43 3.87 1.18 5.38l4.09-3.14z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.15 2.64 1.18 6.62l4.09 3.14c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+                Continue with Google
+            </a>
+
+            <button id="closeRegModal" style="margin-top: 15px; background: transparent; color: #aaa; border: none; cursor: pointer;">داخستن</button>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signinModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #1e1b4b; padding: 25px; border-radius: 10px; width: 320px; color: white; text-align: center;">
+            <h3 style="margin-bottom: 15px;">چوونا ژوورێ (Sign In)</h3>
+            <form action="/api/login" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+                <input type="text" name="username" placeholder="ناڤێ بکارهێنەری (Username)" required style="padding: 10px; border-radius: 5px; border: none;">
+                <input type="password" name="password" placeholder="پەیپاڤ (Password)" required style="padding: 10px; border-radius: 5px; border: none;">
+                <button type="submit" style="padding: 10px; background: #2563eb; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">چوونا ژوور</button>
+            </form>
+            <button id="closeSignModal" style="margin-top: 15px; background: transparent; color: #aaa; border: none; cursor: pointer;">داخستن</button>
+        </div>
+    </div>
+
+    <!-- Withdrawal Modal (سحب) -->
+    <div id="withdrawModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #170A34; padding: 25px; border-radius: 10px; width: 350px; color: white; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="margin-bottom: 15px;">داخوازیا ڤەکێشانێ (سحب پارە)</h3>
+            <form id="withdrawForm" style="display: flex; flex-direction: column; gap: 12px; text-align: right;">
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-size: 13px;">ڕێگەی ڤەکێشانێ:</label>
+                    <select id="withdrawMethod" style="width: 100%; padding: 10px; border-radius: 5px; background: #23124d; color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+                        <option value="FastPay">فاست پەی (FastPay)</option>
+                        <option value="ZainCash">زەین کاش (ZainCash)</option>
+                        <option value="USDT">تەزەری (USDT / Crypto)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-size: 13px;">ژمارەی ئەکاونت / هەژمار:</label>
+                    <input type="text" id="withdrawAccount" placeholder="بۆ نموونە: 0750xxxxxxx" required style="width: 100%; padding: 10px; border-radius: 5px; background: #23124d; color: #fff; border: 1px solid rgba(255,255,255,0.2); box-sizing: border-box;">
+                </div>
+
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-size: 13px;">بڕی پارە ($):</label>
+                    <input type="number" id="withdrawAmount" placeholder="10" min="1" required style="width: 100%; padding: 10px; border-radius: 5px; background: #23124d; color: #fff; border: 1px solid rgba(255,255,255,0.2); box-sizing: border-box;">
+                </div>
+
+                <button type="submit" style="width: 100%; margin-top: 5px; padding: 10px; background-color: #e11d48; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">ناردنا داخوازیا سحب</button>
+            </form>
+            <p id="withdrawMsg" style="margin-top: 15px; text-align: center; font-size: 14px;"></p>
+            <button id="closeWithdrawModal" style="margin-top: 15px; background: transparent; color: #aaa; border: none; cursor: pointer;">داخستن</button>
+        </div>
+    </div>
+
+    <script>
+        const regModal = document.getElementById('registerModal');
+        const signModal = document.getElementById('signinModal');
+        const withdrawModal = document.getElementById('withdrawModal');
+
+        const openReg = document.getElementById('openRegModal');
+        const openSign = document.getElementById('openSignModal');
+        const openWithdraw = document.getElementById('openWithdrawModal');
+
+        const closeReg = document.getElementById('closeRegModal');
+        const closeSign = document.getElementById('closeSignModal');
+        const closeWithdraw = document.getElementById('closeWithdrawModal');
+
+        if(openReg) openReg.onclick = (e) => { e.preventDefault(); regModal.style.display = 'flex'; };
+        if(closeReg) closeReg.onclick = () => { regModal.style.display = 'none'; };
+
+        if(openSign) openSign.onclick = (e) => { e.preventDefault(); signModal.style.display = 'flex'; };
+        if(closeSign) closeSign.onclick = () => { signModal.style.display = 'none'; };
+
+        if(openWithdraw) openWithdraw.onclick = (e) => { e.preventDefault(); withdrawModal.style.display = 'flex'; };
+        if(closeWithdraw) closeWithdraw.onclick = () => { withdrawModal.style.display = 'none'; };
+
+        // لۆژیکا ناردنا داخوازییا سحب ب Fetch API
+        const withdrawForm = document.getElementById('withdrawForm');
+        if(withdrawForm) {
+            withdrawForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const method = document.getElementById('withdrawMethod').value;
+                const accountNum = document.getElementById('withdrawAccount').value;
+                const amount = document.getElementById('withdrawAmount').value;
+                const msgEl = document.getElementById('withdrawMsg');
+
+                msgEl.style.color = '#fff';
+                msgEl.textContent = 'چاوەڕێ بە، داواکاری دهێتە ناردن...';
+
+                try {
+                    const response = await fetch('/api/withdraw', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            amount: parseFloat(amount),
+                            method: method,
+                            accountNum: accountNum
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        msgEl.style.color = '#2ecc71';
+                        msgEl.textContent = data.message;
+                        
+                        setTimeout(() => {
+                            location.reload(); 
+                        }, 2000);
+                    } else {
+                        msgEl.style.color = '#e74c3c';
+                        msgEl.textContent = data.error || 'هەڵەیەک ڕووی دا!';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    msgEl.style.color = '#e74c3c';
+                    msgEl.textContent = 'کێشە لە پەیوەندیکردن بگەڵ سێرڤەری هەەیە!';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
